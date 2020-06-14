@@ -1,11 +1,12 @@
+const seconds = document.getElementById("timer");
+
 const timer = function(){
-    const seconds = document.getElementById("timer");
     seconds.textContent -= 1;
 
-    if (seconds.textContent < 0) {
-        alert('Вы победили в конкурсе!');
-        seconds.textContent = 59;
-    }    
+    if (seconds.textContent == 0) {
+    alert('Вы победили в конкурсе!');    
+    clearInterval(timerId);
+    }
 }
 
-setInterval(timer, 1000);
+let timerId = setInterval(timer, 1000);
