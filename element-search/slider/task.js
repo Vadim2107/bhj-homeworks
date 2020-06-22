@@ -1,8 +1,10 @@
 const sliderArrow = document.querySelectorAll('.slider__arrow');
 const sliderItem = document.querySelectorAll('.slider__item');
+const sliderDot = document.querySelectorAll('.slider__dot');
 
 let arrArrow = Array.from(sliderArrow);
 let arrItem = Array.from(sliderItem);
+let arrDot = Array.from(sliderDot);
 let numActiveSlide = 0;
 
 for (let i = 0; i < arrArrow.length; i++) {    
@@ -33,5 +35,13 @@ for (let i = 0; i < arrArrow.length; i++) {
                 
             numActiveSlide = --numActiveSlide;
         }
+    }
+}
+
+for (let i = 0; i < arrDot.length; i++) {
+    arrDot[i].onclick = function() {
+        arrItem[numActiveSlide].classList.remove('slider__item_active');
+        arrItem[i].classList.add('slider__item_active');
+        numActiveSlide = i;
     }
 }
