@@ -3,8 +3,7 @@ class Game {
     this.container = container;
     this.wordElement = container.querySelector('.word');
     this.winsElement = container.querySelector('.status__wins');
-    this.lossElement = container.querySelector('.status__loss');
-    // this.currentSymbol = document.querySelectorAll('.symbol');
+    this.lossElement = container.querySelector('.status__loss');    
 
     this.reset();
 
@@ -17,20 +16,18 @@ class Game {
     this.lossElement.textContent = 0;
   }
    
-  registerEvents() { 
-    // let currentSymbol = document.querySelectorAll('.symbol');
-    let symbol = this.currentSymbol;
+  registerEvents() {    
 
-    document.onkeyup = function() {      
-      let enterSymbol = event.key;
-
+    document.addEventListener('keyup', () => {      
+      let enterSymbol = event.key;      
+      let symbol = this.currentSymbol.textContent;
+      
       if (symbol == enterSymbol) {
         this.success();
       } else {
         this.fail();
-      }
-      // alert(enterSymbol);
-    }
+      }     
+    })
   }
 
   success() {
@@ -93,5 +90,4 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'))
-
+new Game(document.getElementById('game'));
