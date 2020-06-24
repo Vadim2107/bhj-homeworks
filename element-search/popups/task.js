@@ -10,8 +10,7 @@ modalMain.classList.add('modal_active');
 
 for (let i = 0; i < arr.length; i++) {
     arr[i].onclick = function() {
-        modalMain.classList.remove('modal_active');
-        modalSuccess.classList.remove('modal_active');
+        this.closest('.modal_active').classList.remove('modal_active');        
     }
 }
 
