@@ -1,3 +1,5 @@
+'use strict'
+
 const hasTooltip = document.querySelectorAll('.has-tooltip');
 const tooltip = document.querySelector('.tooltip');
 let arr = Array.from(hasTooltip);
