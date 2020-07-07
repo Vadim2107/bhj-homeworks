@@ -13,14 +13,14 @@ xhr.onreadystatechange = () => {
         // let responseRequest = JSON.parse(xhr.responseText);
         let valute = JSON.parse(xhr.responseText).response.Valute;
 
-        for (let obj in valute) {
+        for (let key in valute) {
             items.insertAdjacentHTML('beforeEnd', `
             <div class="item">
                 <div class="item__code">
-                    ${obj.CharCode}
+                    ${valute[key].CharCode}
                 </div>
                 <div class="item__value">
-                    ${obj.Value}
+                    ${valute[key].Value}
                 </div>
                 <div class="item__currency">
                     руб.
