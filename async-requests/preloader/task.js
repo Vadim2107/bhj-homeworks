@@ -10,7 +10,7 @@ xhr.onreadystatechange = () => {
     
     if (xhr.readyState === 4) {
         loader.classList.remove('loader_active');
-        // let responseRequest = JSON.parse(xhr.responseText);
+        
         let valute = JSON.parse(xhr.responseText).response.Valute;
 
         for (let key in valute) {
@@ -33,22 +33,21 @@ xhr.onreadystatechange = () => {
 // xhr.addEventListener('readystatechange', () => {
 //     if (xhr.readyState === xhr.DONE) {
 //         loader.classList.remove('loader_active');
-//         // let responseRequest = JSON.parse(xhr.responseText);
+//         
 //         let valute = JSON.parse(xhr.responseText).response.Valute;
 //         for (let key in valute) {
 //             items.insertAdjacentHTML('beforeEnd', `
 //             <div class="item">
 //                 <div class="item__code">
-//                     ${key.CharCode}
+//                     ${valute[key].CharCode}
 //                 </div>
 //                 <div class="item__value">
-//                     ${key.Value}
+//                     ${valute[key].Value}
 //                 </div>
 //                 <div class="item__currency">
 //                     руб.
 //                 </div>
-//             </div>`);
-//             // console.log(xhr.responseText);
+//             </div>`);            
 //         }
 //     }
 // });
