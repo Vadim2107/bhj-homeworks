@@ -21,6 +21,6 @@ if (getCookie('modalWindow') == undefined) {
 
 modalClose.addEventListener('click', () => {
     subscribeModal.classList.remove('modal_active');
-    // document.cookie = 'modalWindow=windowIsClosed';
-    document.cookie = 'modalWindow=' + encodeURIComponent('The modal window is closed');
+    document.cookie = 'modalWindow=windowIsClosed';
+//     document.cookie = 'modalWindow=' + encodeURIComponent('The modal window is closed');
 })
